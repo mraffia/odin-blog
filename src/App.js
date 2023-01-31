@@ -33,10 +33,6 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-
-  }, [postid])
-
   return (
     // basename="/odin-blog"
     <BrowserRouter>

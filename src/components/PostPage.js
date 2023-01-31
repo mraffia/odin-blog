@@ -41,10 +41,6 @@ function PostPage({ postid }) {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(post);
-  }, [post]);
-
   return (
     <div className="post-container">
       {isErrorPost && <div className="error-message">Something went wrong...</div>}
