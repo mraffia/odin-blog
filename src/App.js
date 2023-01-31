@@ -2,13 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from './components/Nav.js';
 import HomePage from './components/HomePage.js';
-// import PostPage from './components/PostPage.js';
+import PostPage from './components/PostPage.js';
 import './App.css';
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [postid, setPostid] = useState('');
+
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  function handleChoosePost(postid) {
+    setPostid(postid);
+  }
 
   useEffect(() => {
     setIsError(false);
@@ -27,6 +33,10 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+
+  }, [postid])
+
   return (
     // basename="/odin-blog"
     <BrowserRouter>
@@ -35,8 +45,8 @@ function App() {
 
         <div className="content">
           <Routes>
-            <Route path="/" element={<HomePage posts={posts} isLoading={isLoading} isError={isError} />} />
-            {/* <Route path="/post" element={<PostPage />} /> */}
+            <Route path="/" element={<HomePage posts={posts} handleChoosePost={handleChoosePost} isLoading={isLoading} isError={isError} />} />
+            <Route path="/post" element={<PostPage postid={postid} />} />
           </Routes>
         </div>
 
