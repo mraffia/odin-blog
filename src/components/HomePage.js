@@ -23,6 +23,7 @@ function HomePage({ posts, handleChoosePost, isLoading, isError }) {
       ) : (
         <div className="home-subcontainer">
           {posts.map((post, i) => {
+            if (post.is_published === false) return null;
             return (
               <div key={i} onClick={() => handleChoosePost(post._id)}>
                 <Link to="/post" className="post-link">
