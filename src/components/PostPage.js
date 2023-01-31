@@ -64,7 +64,7 @@ function PostPage({ postid }) {
           <hr />
           <h2 className="post-comment-heading">Comments</h2>
           <div className="comment-list-container">
-            {comments === [] ? 
+            {comments.length !== 0 ? 
               comments.map((comment, i) => {
                 return (
                   <div key={i} className="comment-container">
