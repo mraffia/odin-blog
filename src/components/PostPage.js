@@ -68,7 +68,7 @@ function PostPage({ postid }) {
               comments.map((comment, i) => {
                 return (
                   <div key={i} className="comment-container">
-                    <div className="comment-author"><strong>{comment.author}</strong> says...</div>
+                    <div className="comment-author"><strong>{comment.author}</strong></div>
                     <div className="comment-content">{comment.content}</div>
                     <div className="comment-date">{dateFormatter(comment.timestamp)}</div>
                   </div>
