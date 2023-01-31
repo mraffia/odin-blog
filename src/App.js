@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [postid, setPostid] = useState('');
+  const [postid, setPostid] = useState('63d6a7dfc301e8d2cb8970cb');
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
