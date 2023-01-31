@@ -3,7 +3,14 @@ import '../styles/PostCard.css';
 
 function PostCard({ post }) {
 
-  function shortenedTitle(title) {
+  function dateFormatter(date) {
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    let newDate = new Date(date);
+
+    return newDate.toLocaleDateString("en-GB", options)
+  }
+
+  function titleShortener(title) {
     if (title.length < 30) {
       return title;
     } else {
@@ -11,7 +18,7 @@ function PostCard({ post }) {
     }
   }
 
-  function shortenedContent(content) {
+  function contentShortener(content) {
     if (content.length < 50) {
       return content;
     } else {
@@ -22,12 +29,12 @@ function PostCard({ post }) {
   return (
     <div className="card-container">
       <div className="card-content-container">
-        <h3 className="card-post-title">{shortenedTitle(post.title)}</h3>
-        <p className="card-post-content">{shortenedContent(post.content)}</p>
+        <div className="card-post-title">{titleShortener(post.title)}</div>
+        <div className="card-post-content">{contentShortener(post.content)}</div>
       </div>
       <div className="card-info-container">
         <div className="card-post-author">{post.author.name}</div>
-        <div className="card-post-date">At {post.timestamp_formatted}</div>
+        <div className="card-post-date">At {dateFormatter(post.timestamp)}</div>
       </div>
     </div>
   );
