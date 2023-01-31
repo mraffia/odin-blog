@@ -67,16 +67,19 @@ function PostPage({ postid }) {
           <div className="post-content">{post.content}</div>
           <hr />
           <h2 className="post-comment-heading">Comments</h2>
-          <div className="comments-container">
-            {comments.map((comment, i) => {
-              return (
-                <div key={i}>
-                  <h3>{comment.author}</h3>
-                  <p>{comment.content}</p>
-                  <p>{dateFormatter(comment.timestamp)}</p>
-                </div>
-              )
-            })}
+          <div className="comment-list-container">
+            {comments === [] ? 
+              comments.map((comment, i) => {
+                return (
+                  <div key={i} className="comment-container">
+                    <div className="comment-author"><strong>{comment.author}</strong> says...</div>
+                    <div className="comment-content">{comment.content}</div>
+                    <div className="comment-date">{dateFormatter(comment.timestamp)}</div>
+                  </div>
+                )
+              }) : (
+              <div className="comment-absent">There are no comments on this post.</div>
+            )}
           </div>
         </div>
       )}
