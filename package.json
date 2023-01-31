@@ -1,5 +1,5 @@
 {
-  "name": "odin-blog-client",
+  "name": "odin-blog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
