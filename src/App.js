@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Nav from './components/Nav.js';
+import Nav from './components/Nav.js';
 // import HomePage from './components/HomePage.js';
 // import PostPage from './components/PostPage.js';
 import './App.css';
@@ -10,7 +10,7 @@ function App() {
     // basename="/odin-blog"
     <BrowserRouter>
       <div className="container">
-        {/* <Nav /> */}
+        <Nav />
 
         <div className="content">
           <Routes>
