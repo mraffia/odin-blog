@@ -7,16 +7,25 @@ import './App.css';
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    fetch('https://mraffia-odin-blog-api.up.railway.app/posts')
-      .then((response) => response.json())
-      .then((data) => setPosts(data.posts));
+    setIsError(false);
+    setIsLoading(true);
+
+    try {
+      fetch('https://mraffia-odin-blog-api.up.railway.app/posts')
+        .then((response) => response.json())
+        .then((data) => {
+          setPosts(data.posts);
+          setIsLoading(false)
+        })
+    } catch (error) {
+      console.error('Error fetching posts data from Blog API', error);
+      setIsError(true);
+    }
   }, []);
-
-  useEffect(() => {
-    console.log(posts);
-  }, [posts]);
 
   return (
     // basename="/odin-blog"
@@ -26,7 +35,7 @@ function App() {
 
         <div className="content">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage posts={posts} isLoading={isLoading} isError={isError} />} />
             {/* <Route path="/post" element={<PostPage />} /> */}
           </Routes>
         </div>
