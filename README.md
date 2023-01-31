@@ -2,8 +2,8 @@
 Blog API project from NodeJS section of the Full Stack Javascript Course on The Odin Project.
 
 ## Project Website
-- [Blog live demo](https://mraffia-odin-blog.up.railway.app/)
-- [CMS live demo](https://mraffia-odin-blog-cms.up.railway.app/)
+- [Blog live demo](https://mraffia.github.io/odin-blog)
+- [CMS live demo](https://mraffia.github.io/odin-blog-cms)
 - [API repo](https://github.com/mraffia/odin-blog-api)
 - [CMS repo](https://github.com/mraffia/odin-blog-cms)
 
