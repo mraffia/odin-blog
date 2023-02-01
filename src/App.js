@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Nav from './components/Nav.js';
 import HomePage from './components/HomePage.js';
 import PostPage from './components/PostPage.js';
@@ -33,7 +33,8 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="/odin-blog">
+    // basename="/odin-blog"
+    <HashRouter>
       <div className="container">
         <Nav />
 
@@ -54,7 +55,7 @@ function App() {
           </a>
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
