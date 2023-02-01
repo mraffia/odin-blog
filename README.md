@@ -1,4 +1,4 @@
-# odin-blog-api
+# odin-blog
 Blog API project from NodeJS section of the Full Stack Javascript Course on The Odin Project.
 > This is the blog client repo from the Blog API project.
 
