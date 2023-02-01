@@ -20,17 +20,16 @@ function App() {
     setIsError(false);
     setIsLoading(true);
 
-    try {
-      fetch('https://mraffia-odin-blog-api.up.railway.app/posts')
-        .then((response) => response.json())
-        .then((data) => {
-          setPosts(data.posts);
-          setIsLoading(false)
-        })
-    } catch (error) {
-      console.error('Error fetching posts data from Blog API', error);
-      setIsError(true);
-    }
+    fetch('https://mraffia-odin-blog-api.up.railway.app/posts')
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data.posts);
+        setIsLoading(false)
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setIsError(true);
+      });
   }, []);
 
   return (
