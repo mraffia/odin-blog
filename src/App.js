@@ -33,8 +33,7 @@ function App() {
   }, []);
 
   return (
-    // basename="/odin-blog"
-    <BrowserRouter>
+    <BrowserRouter basename="/odin-blog">
       <div className="container">
         <Nav />
 
