@@ -7,13 +7,13 @@ import './App.css';
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [postid, setPostid] = useState('63d6a7dfc301e8d2cb8970cb');
+  const [currentPost, setCurrentPost] = useState('63d6a7dfc301e8d2cb8970cb');
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  function handleChoosePost(postid) {
-    setPostid(postid);
+  function handleChoosePost(currentPost) {
+    setCurrentPost(currentPost);
   }
 
   useEffect(() => {
@@ -41,7 +41,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<HomePage posts={posts} handleChoosePost={handleChoosePost} isLoading={isLoading} isError={isError} />} />
-            <Route path="/post" element={<PostPage postid={postid} />} />
+            <Route path="/post" element={<PostPage currentPost={currentPost} />} />
           </Routes>
         </div>
 
