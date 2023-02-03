@@ -12,7 +12,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  function handleChoosePost(currentPost) {
+  function handleCurrentPost(currentPost) {
     setCurrentPost(currentPost);
   }
 
@@ -40,7 +40,7 @@ function App() {
 
         <div className="content">
           <Routes>
-            <Route path="/" element={<HomePage posts={posts} handleChoosePost={handleChoosePost} isLoading={isLoading} isError={isError} />} />
+            <Route path="/" element={<HomePage posts={posts} handleCurrentPost={handleCurrentPost} isLoading={isLoading} isError={isError} />} />
             <Route path="/post" element={<PostPage currentPost={currentPost} />} />
           </Routes>
         </div>
