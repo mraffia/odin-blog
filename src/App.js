@@ -7,13 +7,14 @@ import './App.css';
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [currentPost, setCurrentPost] = useState('63d6a7dfc301e8d2cb8970cb');
+  const [currentPost, setCurrentPost] = useState(localStorage.getItem("current_post") ? localStorage.getItem("current_post") : '63d6a7dfc301e8d2cb8970cb');
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  function handleCurrentPost(currentPost) {
-    setCurrentPost(currentPost);
+  function handleCurrentPost(post) {
+    localStorage.setItem("current_post", post);
+    setCurrentPost(post);
   }
 
   useEffect(() => {
